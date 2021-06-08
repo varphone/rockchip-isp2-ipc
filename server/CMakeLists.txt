@@ -6,15 +6,19 @@ include(FindPkgConfig)
 message("=================================")
 message("$PROJECT_SOURCE_DIR")
 
+add_compile_options(${ISP_HW_VERSION})
+
 include_directories(
 	${PROJECT_SOURCE_DIR}/./
         ${PROJECT_SOURCE_DIR}/../interface/
         ${PROJECT_SOURCE_DIR}/../common/
+        ${CMAKE_SYSROOT}/usr/include/rkaiq/
         ${CMAKE_SYSROOT}/usr/include/rkaiq/uAPI/
         ${CMAKE_SYSROOT}/usr/include/rkaiq/algos
         ${CMAKE_SYSROOT}/usr/include/rkaiq/common
         ${CMAKE_SYSROOT}/usr/include/rkaiq/xcore
         ${CMAKE_SYSROOT}/usr/include/rkaiq/iq_parser
+        ${CMAKE_SYSROOT}/usr/include/rkaiq/iq_parser_v2
         ${PROJECT_SOURCE_DIR}/../utils/
 if(DEFINED CONFIG_DBUS)
         ${PROJECT_SOURCE_DIR}/../../CallFunIpc

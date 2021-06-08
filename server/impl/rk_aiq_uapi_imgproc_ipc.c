@@ -58,12 +58,12 @@ XCamReturn rk_aiq_uapi_getExpMode_ipc(void *args){
 *****************************
 */
 XCamReturn rk_aiq_uapi_setAeMode_ipc(void *args){
-    CALL_SET_AIQ(rk_aiq_uapi_setAeMode);
+//    CALL_SET_AIQ(rk_aiq_uapi_setAeMode);
     return 0;
 }
 XCamReturn rk_aiq_uapi_getAeMode_ipc(void *args){
 
-   CALL_GET_AIQ(rk_aiq_uapi_getAeMode);
+ //  CALL_GET_AIQ(rk_aiq_uapi_getAeMode);
    return 0;
 }
 
@@ -150,11 +150,11 @@ XCamReturn rk_aiq_uapi_setHLCMode_ipc(void *args){return 0;}
 *****************************
 */
 XCamReturn rk_aiq_uapi_setLExpMode_ipc(void *args){
-    CALL_SET_AIQ(rk_aiq_uapi_setLExpMode);
+//    CALL_SET_AIQ(rk_aiq_uapi_setLExpMode);
     return 0;
 }
 XCamReturn rk_aiq_uapi_getLExpMode_ipc(void *args){
-    CALL_GET_AIQ(rk_aiq_uapi_getLExpMode);
+  //  CALL_GET_AIQ(rk_aiq_uapi_getLExpMode);
     return 0;
 }
 
@@ -168,7 +168,7 @@ XCamReturn rk_aiq_uapi_getLExpMode_ipc(void *args){
 *****************************
 */
 XCamReturn rk_aiq_uapi_setMLExp_ipc(void *args){
-   CALL_SET_AIQ_EXT(rk_aiq_uapi_setMLExp);
+   //CALL_SET_AIQ_EXT(rk_aiq_uapi_setMLExp);
    return 0;
 }
 XCamReturn rk_aiq_uapi_getMLExp_ipc(void *args){
@@ -213,11 +213,11 @@ XCamReturn rk_aiq_uapi_getExpPwrLineFreqMode_ipc(void *args){
 *****************************
 */
 XCamReturn rk_aiq_uapi_setDayNSwMode_ipc(void *args){
-    CALL_SET_AIQ(rk_aiq_uapi_setDayNSwMode);
+//    CALL_SET_AIQ(rk_aiq_uapi_setDayNSwMode);
     return 0;
 }
 XCamReturn rk_aiq_uapi_getDayNSwMode_ipc(void *args){
-    CALL_GET_AIQ(rk_aiq_uapi_getDayNSwMode);
+  //  CALL_GET_AIQ(rk_aiq_uapi_getDayNSwMode);
     return 0;
 }
 
@@ -232,11 +232,11 @@ XCamReturn rk_aiq_uapi_getDayNSwMode_ipc(void *args){
 *****************************
 */
 XCamReturn rk_aiq_uapi_setMDNScene_ipc(void *args){
-    CALL_SET_AIQ(rk_aiq_uapi_setMDNScene);
+  //  CALL_SET_AIQ(rk_aiq_uapi_setMDNScene);
     return 0;
 }
 XCamReturn rk_aiq_uapi_getMDNScene_ipc(void *args){
-    CALL_GET_AIQ(rk_aiq_uapi_getMDNScene);
+//    CALL_GET_AIQ(rk_aiq_uapi_getMDNScene);
     return 0;
 }
 
@@ -252,11 +252,11 @@ XCamReturn rk_aiq_uapi_getMDNScene_ipc(void *args){
 *****************************
 */
 XCamReturn rk_aiq_uapi_setADNSens_ipc(void *args){
-    CALL_SET_AIQ_EXT(rk_aiq_uapi_setADNSens);
+    //CALL_SET_AIQ_EXT(rk_aiq_uapi_setADNSens);
     return 0;
 }
 XCamReturn rk_aiq_uapi_getADNSens_ipc(void *args){
-    CALL_GET_AIQ_EXT(rk_aiq_uapi_getADNSens);
+    //CALL_GET_AIQ_EXT(rk_aiq_uapi_getADNSens);
     return 0;
 }
 

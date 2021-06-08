@@ -1,8 +1,9 @@
 #ifndef _RK_AIQ_USER_API_ABLC_PTL_H_
 #define _RK_AIQ_USER_API_ABLC_PTL_H_
 
-//#include "ablc/rk_aiq_uapi_ablc_int.h"
-#include "rk_aiq_user_api_ablc.h"
+#include "ablc/rk_aiq_types_ablc_algo_int.h"
+#include "rk_aiq_user_api_sysctl.h"
+
 typedef struct
     rk_aiq_user_api_ablc_SetAttrib {
     rk_aiq_sys_ctx_t* sys_ctx;
@@ -18,4 +19,3 @@ typedef struct
 } rk_aiq_user_api_ablc_GetAttrib_t;
 
 #endif
-

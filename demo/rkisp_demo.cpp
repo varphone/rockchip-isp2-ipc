@@ -23,7 +23,7 @@
 #include "drmDsp.h"
 #include "rk_aiq_user_api_sysctl.h"
 #include "rk_aiq_user_api_a3dlut.h"
-#include "rk_aiq_user_api_ablc.h"
+// #include "rk_aiq_user_api_ablc.h"
 #include "rk_aiq_user_api_imgproc.h"
 #include "config.h"
 #include <termios.h>
@@ -86,29 +86,29 @@ static struct termios oldt;
 void restore_terminal_settings(void)
 {
     // Apply saved settings
-    tcsetattr(0, TCSANOW, &oldt); 
+    tcsetattr(0, TCSANOW, &oldt);
 }
 
 //make terminal read 1 char at a time
 void disable_terminal_return(void)
 {
     struct termios newt;
-    
+
     //save terminal settings
-    tcgetattr(0, &oldt); 
+    tcgetattr(0, &oldt);
     //init new settings
-    newt = oldt;  
+    newt = oldt;
     //change settings
     newt.c_lflag &= ~(ICANON | ECHO);
     //apply settings
     tcsetattr(0, TCSANOW, &newt);
-    
+
     //make sure settings will be restored when program ends
     atexit(restore_terminal_settings);
 }
 
 void test_imgproc(const rk_aiq_sys_ctx_t* ctx) {
-    
+
    if (ctx == NULL) {
       return;
    }
@@ -493,7 +493,7 @@ static int read_frame_pp_oneframe()
         else
             bytesused = buf.bytesused;
 
-        // queue to ispp input 
+        // queue to ispp input
         printf("------ queue 1 index %d to ispp input --------------\n", i);
         CLEAR(buf_pp);
         buf_pp.type = V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE;
@@ -833,7 +833,7 @@ static void init_device(void)
 
 static void init_device_pp_oneframe(void)
 {
-    // TODO, set format and link, now do with setup_link.sh    
+    // TODO, set format and link, now do with setup_link.sh
     init_input_dmabuf_oneframe();
 }
 
@@ -1018,7 +1018,7 @@ void parse_args(int argc, char **argv)
 
 }
 
-static void deinit() 
+static void deinit()
 {
     stop_capturing();
     if (pponeframe)
@@ -1135,7 +1135,7 @@ int main(int argc, char **argv)
          //   usleep(1000*1000);
         //    printf("=======call_fun_ipc_client_init, r=0x%x\n",r);
       //  }
-        
+
 		aiq_ctx = rk_aiq_uapi_sysctl_init(sns_entity_name,NULL, NULL, NULL);
 
 		if (aiq_ctx) {
@@ -1177,7 +1177,7 @@ int main(int argc, char **argv)
         if (pponeframe)
             start_capturing_pp_oneframe();
 	}
-#if ENABLE_TEST    
+#if ENABLE_TEST
     pthread_t tid;
     pthread_create(&tid, NULL, (void*)test_thread, NULL);
 #endif

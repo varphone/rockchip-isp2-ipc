@@ -19,6 +19,6 @@ add_compile_options(-Wno-unused-variable
 add_subdirectory(server)
 
 if(CONFIG_DBUS)
-add_subdirectory(client)
-add_subdirectory(demo)
+#add_subdirectory(client)
+#add_subdirectory(demo)
 endif()
