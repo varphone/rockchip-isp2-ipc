@@ -37,6 +37,10 @@ static dc_mode_t gc_dc_mode = DC_INVALID;
 static int g_stream_on = 0;
 static int g_fix_fps = -1;
 static ispserver_status_signal_send g_send_func = NULL;
+float exposure_uvc_time[10] = {0.0005f, 0.001f,  0.002f,  0.0039f, 0.0078f,
+                               0.0156f, 0.0312f, 0.0625f, 0.1250f, 0.2500f};
+float exposure_isp_time[10] = {0.0005f, 0.001f,  0.002f,  0.0039f, 0.0078f,
+                               0.0100f, 0.0150f, 0.0200f, 0.0250f, 0.0300f};
 
 static void set_led_state(int status) { gc_led_mode = status; }
 
@@ -1079,6 +1083,14 @@ int manual_exposure_auto_gain_set_float(float expTime) {
 
   pthread_mutex_lock(&db_aiq_ctx_mutex);
   rk_aiq_user_api_ae_getExpSwAttr(db_aiq_ctx, &stExpSwAttr);
+  for (size_t i = 0; i < sizeof(exposure_uvc_time); i++)
+  {
+    if (expTime == exposure_uvc_time[i])
+    {
+      expTime = exposure_isp_time[i];
+    }
+  }
+
   stExpSwAttr.AecOpType = RK_AIQ_OP_MODE_MANUAL;
   stExpSwAttr.stManual.stLinMe.ManualGainEn = false;
   stExpSwAttr.stManual.stLinMe.ManualTimeEn = true;

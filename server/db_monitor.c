@@ -1211,7 +1211,7 @@ static void updatehash_exposure(int sce, char *name, void *data) {
   } else if (g_str_equal(name, "sGainMode")) {
     exposure_cfg->AutoGainEnabled = string2work_mode_0_t((char *)data);
   } else if (g_str_equal(name, "sExposureTime")) {
-    exposure_cfg->ExposureTime = exposure_time_str2float((char *)data);
+    exposure_cfg->ExposureTime = atof(data);
   } else if (g_str_equal(name, "iExposureGain")) {
     exposure_cfg->ExposureGain = *(int *)data;
   }
